@@ -34,22 +34,9 @@ jobs:
       uses: easimon/maximize-build-space@v10
       with:
         # Space to be left free on the root filesystem, in Megabytes.
-        root-reserve-mb: 51200
-        # Space to be left free on the temp filesystem (/mnt), in Megabytes.
         temp-reserve-mb: 100
         # Swap space to create, in Megabytes.
-        swap-size-mb: 4096
-        # Create the LVM disk images as sparse files, making the space required for the LVM image files *appear* unused on the.
-        overprovision-lvm: false
-        # Absolute path to the mount point where the build space will be available, defaults to $GITHUB_WORKSPACE if unset.
-        build-mount-path: $GITHUB_WORKSPACE
-        # Ownership of the mount point path, defaults to standard "runner" user and group.
-        build-mount-path-ownership: runner:runner
-        # Absolute file path for the LVM image created on the root filesystem, the default is usually fine.
-        pv-loop-path: /pv.img
-        # Absolute file path for the LVM image created on the temp filesystem, the default is usually fine. Must reside on /mnt
-        tmp-pv-loop-path: /mnt/tmp-pv.img
-        # Removes .NET runtime and libraries. (frees ~17 GB)
+        swap-size-mb: 1024
         remove-dotnet: true
         # Removes Android SDKs and Tools. (frees ~11 GB)
         remove-android: false
