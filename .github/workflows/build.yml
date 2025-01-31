@@ -45,14 +45,7 @@ jobs:
         # Removes CodeQL Action Bundles. (frees ~5.4 GB)
         remove-codeql: true
         remove-docker-images: false
-          
-    - name: One more
-      run: |
-        sudo rm -rf /usr/share/dotnet
-        sudo rm -rf /opt/ghc
-        sudo rm -rf "/usr/local/share/boost"
-        sudo rm -rf "$AGENT_TOOLSDIRECTORY"
-    
+            
     - name: Checkout
       uses: actions/checkout@master
     
@@ -77,6 +70,18 @@ jobs:
         chmod +x ~/bin/repo
         git config --global user.name "UBports Redmi 4A CI"
         git config --global user.email "thisemaildoesnotexist@exist.com"
+
+    - name: One more
+      run: |
+        sudo rm -rf /usr/share/dotnet
+        sudo rm -rf /opt/ghc
+        sudo rm -rf "/usr/local/share/boost"
+        sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+        sudo swapoff -a
+        sudo rm -f /swapfile
+        sudo apt clean
+        docker rmi $(docker image ls -aq)
+        df -h
 
     - name: Downloading source code
       run: |
