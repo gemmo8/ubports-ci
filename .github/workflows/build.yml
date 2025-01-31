@@ -3,7 +3,7 @@
 # Lisence: MIT
 # Contributor: 0312birdzhang
 # Maintainer: Danct12
-# Credit: https://github.com/P3TERX/Actions-OpenWr
+# Credit: https://github.com/P3TERX/Actions-OpenWrt
 #=================================================
 
 name: Build System Image
@@ -14,28 +14,21 @@ on:
       - master
   release:
     types: [published]
-      
-    
+
 jobs:
 
   build:
     runs-on: ubuntu-20.04
-    
+
     env:
       VENDOR: xiaomi
       DEVICE: rolex
       ANDROID_ROOT: /home/runner/work/halium/
 
     steps:
-
     - name: Checkout
       uses: actions/checkout@master
-
-    - name: Remove file
-    - run: |
-        sudo rm -rf /usr/share/dotnet
-        sudo rm -rf "$AGENT_TOOLSDIRECTORY"
-
+    
     - name: Initialization environment
       run: |
         sudo apt-get update
