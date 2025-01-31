@@ -28,6 +28,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
+
+    - name: Maximize build space
+      uses: easimon/maximize-build-space@master
     
     - name: Initialization environment
       run: |
