@@ -48,6 +48,7 @@ jobs:
         # Removes CodeQL Action Bundles. (frees ~5.4 GB)
         remove-codeql: true
         remove-docker-images: false
+    
     - name: One more
       run: |
         sudo rm -rf /usr/share/dotnet
