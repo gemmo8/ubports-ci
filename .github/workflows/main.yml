@@ -1,6 +1,6 @@
  - name: Maximize build disk space
   # You may pin to the exact commit or the version.
-  # uses: easimon/maximize-build-space@fc881a613ad2a34aca9c9624518214ebc21dfc0c
+  # B
   uses: easimon/maximize-build-space@v10
   with:
     # Space to be left free on the root filesystem, in Megabytes.
