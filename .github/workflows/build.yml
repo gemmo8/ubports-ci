@@ -57,7 +57,7 @@ jobs:
         remove-haskell: true
         # Removes CodeQL Action Bundles. (frees ~5.4 GB)
         remove-codeql: true
-        remove-docker-images: true
+        remove-docker-images: false
           
     - name: Checkout
       uses: actions/checkout@master
