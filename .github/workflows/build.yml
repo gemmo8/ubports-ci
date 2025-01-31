@@ -34,7 +34,7 @@ jobs:
       uses: easimon/maximize-build-space@v10
       with:
         # Space to be left free on the root filesystem, in Megabytes.
-        root-reserve-mb: 1024
+        root-reserve-mb: 51200
         # Space to be left free on the temp filesystem (/mnt), in Megabytes.
         temp-reserve-mb: 100
         # Swap space to create, in Megabytes.
