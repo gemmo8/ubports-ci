@@ -47,18 +47,7 @@ jobs:
         remove-haskell: true
         # Removes CodeQL Action Bundles. (frees ~5.4 GB)
         remove-codeql: true
-        remove-docker-images: false
-    
-    - name: One more
-      run: |
-        sudo rm -rf /usr/share/dotnet
-        sudo rm -rf /opt/ghc
-        sudo rm -rf "/usr/local/share/boost"
-        sudo rm -rf "$AGENT_TOOLSDIRECTORY"
-        sudo swapoff -a
-        sudo rm -f /swapfile
-        sudo apt clean
-        df -h       
+        remove-docker-images: false     
     
     - name: Initialization environment
       run: |
